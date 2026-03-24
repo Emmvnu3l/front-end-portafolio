@@ -68,7 +68,7 @@ function normalizeLegacyUser(user) {
 
 function logout() {
   window.localStorage.removeItem(AUTH_STORAGE_KEY)
-  window.location.href = '../login/index.html'
+  window.location.href = '../login/login.html'
 }
 
 function svgEl(tag) {
@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const user = normalizeLegacyUser(getStoredUser())
   if (!user) {
-    window.location.href = '../login/index.html'
+    window.location.href = '../login/login.html'
     return
   }
 

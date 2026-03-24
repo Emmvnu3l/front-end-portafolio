@@ -75,7 +75,7 @@ function signIn({ email }) {
 }
 
 function goToDashboard() {
-  window.location.href = '../dashboard/index.html'
+  window.location.href = '../dashboard/dashboard.html'
 }
 
 document.addEventListener('DOMContentLoaded', () => {

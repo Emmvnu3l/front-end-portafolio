@@ -14,11 +14,11 @@ Mockups estáticos en HTML/CSS/JS para un flujo básico de autenticación y un d
 ```
 mockups/
   login/
-    index.html
+    login.html
     styles.css
     script.js
   dashboard/
-    index.html
+    dashboard.html
     styles.css
     script.js
   .vscode/
@@ -30,7 +30,7 @@ mockups/
 ### Opción A: VS Code + Live Server
 
 1. Abrir la carpeta del proyecto en VS Code.
-2. Ir a `mockups/login/index.html`.
+2. Ir a `mockups/login/login.html`.
 3. Ejecutar **Open with Live Server**.
 
 Nota: el proyecto trae configurado el puerto de Live Server en `5501` (ver `mockups/.vscode/settings.json`).
@@ -39,13 +39,13 @@ Nota: el proyecto trae configurado el puerto de Live Server en `5501` (ver `mock
 
 Sirve la carpeta `mockups/` con tu herramienta preferida y navega a:
 
-- `/login/index.html`
+- `/login/login.html`
 
 ## Flujo de uso
 
-1. Abrir el login en `mockups/login/index.html`.
+1. Abrir el login en `mockups/login/login.html`.
 2. Ingresar **cualquier email y contraseña no vacíos**.
-3. Al enviar, se crea una sesión mock en `localStorage` y se redirige a `mockups/dashboard/index.html`.
+3. Al enviar, se crea una sesión mock en `localStorage` y se redirige a `mockups/dashboard/dashboard.html`.
 4. En el dashboard puedes:
    - Cambiar a **Light/Dark** (persistente).
    - Salir con **Salir** (borra sesión y vuelve al login).
