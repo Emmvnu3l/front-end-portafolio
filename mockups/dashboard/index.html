@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard (Mockup)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+  <div class="ds-app">
+    <aside class="ds-sidebar" aria-label="Navegación">
+      <div class="ds-sidebar__inner">
+        <div class="ds-sidebar__brand" aria-label="Brand">∞</div>
+
+        <nav class="ds-nav">
+          <a class="ds-nav__item" href="#" aria-label="Overview" aria-current="page">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M13 2L3 14h7l-1 8 12-14h-7l-1-6Z" stroke="currentColor" stroke-width="1.8"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Devices">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z" stroke="currentColor"
+                stroke-width="1.6" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Analytics">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19V5m0 14h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M7 14l3-3 3 2 5-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"
+                stroke-linecap="round" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Reports">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 3h7l3 3v15a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" stroke="currentColor"
+                stroke-width="1.6" />
+              <path d="M14 3v4h4" stroke="currentColor" stroke-width="1.6" />
+              <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Settings">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.8" />
+              <path
+                d="M19.4 15a8 8 0 0 0 .1-1l2-1.2-2-3.4-2.3.6a7.5 7.5 0 0 0-1.7-1l-.3-2.4H9.8L9.5 8a7.5 7.5 0 0 0-1.7 1l-2.3-.6-2 3.4 2 1.2a8 8 0 0 0 .1 1 8 8 0 0 0-.1 1l-2 1.2 2 3.4 2.3-.6a7.5 7.5 0 0 0 1.7 1l.3 2.4h4.4l.3-2.4a7.5 7.5 0 0 0 1.7-1l2.3.6 2-3.4-2-1.2a8 8 0 0 0-.1-1Z"
+                stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </nav>
+
+        <div class="ds-sidebar__footer">
+          <div id="user-avatar" class="ds-avatar" aria-label="Usuario">U</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="ds-main">
+      <header class="ds-topbar">
+        <div class="d-flex gap-3 align-items-start">
+          <button id="open-nav"
+            class="btn btn-outline-secondary btn-sm d-inline-flex d-lg-none align-items-center gap-2" type="button"
+            aria-label="Abrir navegación">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <span class="visually-hidden">Menú</span>
+          </button>
+
+          <div>
+            <h1 class="ds-title">Bienvenido, <span id="user-name">{User}</span>!</h1>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2 align-items-center">
+          <div class="ds-pill" role="status" aria-label="Real-time monitoring active">
+            <span class="ds-pill__dot" aria-hidden="true"></span>
+            <span>activo</span>
+          </div>
+
+          <button id="toggle-theme"
+            class="btn btn-outline-secondary btn-sm d-none d-sm-inline-flex align-items-center gap-2" type="button"
+            aria-label="Cambiar tema">
+            <span id="theme-icon" aria-hidden="true"></span>
+            <span id="theme-label" class="d-none d-md-inline"></span>
+          </button>
+
+          <button id="logout" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex" type="button">
+            Salir
+          </button>
+        </div>
+      </header>
+
+      <main id="main-content" tabindex="-1">
+        <div class="container-fluid p-0">
+          <section class="surface shadow-soft ds-filters">
+            <form id="filters-form" class="row g-3 align-items-end">
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label for="filterType" class="form-label small mb-1 text-muted">Tipo de documento</label>
+                <select id="filterType" class="form-select">
+                  <option value="all">Todos</option>
+                  <option value="boleta">Boleta</option>
+                  <option value="factura">Factura</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label for="deviceId" class="form-label small mb-1 text-muted">Cliente</label>
+                <select id="deviceId" class="form-select">
+                  <option value="all">Todos los clientes</option>
+                  <option value="comercial-norte">Comercial Norte SpA</option>
+                  <option value="logistica-sur">Logistica Sur Ltda</option>
+                  <option value="retail-centro">Retail Centro SA</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3">
+                <label for="dataMode" class="form-label small mb-1 text-muted">Vista</label>
+                <select id="dataMode" class="form-select">
+                  <option value="monthly">Mensual</option>
+                  <option value="quarterly">Trimestral</option>
+                  <option value="yearly">Anual</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-2">
+                <label for="timePeriod" class="form-label small mb-1 text-muted">Estado</label>
+                <select id="timePeriod" class="form-select">
+                  <option value="all">Todos</option>
+                  <option value="pagada">Pagada</option>
+                  <option value="pendiente">Pendiente</option>
+                  <option value="vencida">Vencida</option>
+                </select>
+              </div>
+              <div class="col-12 col-lg-1 d-grid">
+                <button class="btn btn-primary w-100" type="submit">Filtrar</button>
+              </div>
+            </form>
+            <div class="text-muted small mt-3">
+              Aplicado: <span id="filters-applied">—</span>
+            </div>
+          </section>
+
+          <div class="row g-3 mt-3">
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="ds-metric-card" role="group" aria-label="Total documentos metric">
+                <div class="ds-metric-card__top">
+                  <p class="ds-metric-card__label">Documentos</p>
+                  <span class="ds-metric-card__badge">Periodo</span>
+                </div>
+                <div id="m1-value" class="ds-metric-card__value">—</div>
+                <div class="ds-metric-card__meta">
+                  <span>Boletas y facturas</span>
+                  <span class="ds-trend">
+                    <span aria-hidden="true">↗</span>
+                    <span id="m1-trend">—</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="ds-metric-card" role="group" aria-label="Monto facturado metric">
+                <div class="ds-metric-card__top">
+                  <p class="ds-metric-card__label">Facturado</p>
+                  <span class="ds-metric-card__badge">CLP</span>
+                </div>
+                <div id="m2-value" class="ds-metric-card__value">—</div>
+                <div class="ds-metric-card__meta">
+                  <span>Monto total emitido</span>
+                  <span class="ds-trend ds-trend--down">
+                    <span aria-hidden="true">↘</span>
+                    <span id="m2-trend">—</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="ds-metric-card" role="group" aria-label="Monto pagado metric">
+                <div class="ds-metric-card__top">
+                  <p class="ds-metric-card__label">Pagado</p>
+                  <span class="ds-metric-card__badge">CLP</span>
+                </div>
+                <div id="m3-value" class="ds-metric-card__value">—</div>
+                <div class="ds-metric-card__meta">
+                  <span>Cobranza acumulada</span>
+                  <span class="ds-trend">
+                    <span aria-hidden="true">→</span>
+                    <span id="m3-trend">—</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="ds-metric-card" role="group" aria-label="Pendiente metric">
+                <div class="ds-metric-card__top">
+                  <p class="ds-metric-card__label">Pendiente</p>
+                  <span class="ds-metric-card__badge">CLP</span>
+                </div>
+                <div id="m4-value" class="ds-metric-card__value">—</div>
+                <div class="ds-metric-card__meta">
+                  <span>Saldo por cobrar</span>
+                  <span class="ds-trend">
+                    <span aria-hidden="true">↗</span>
+                    <span id="m4-trend">—</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-3">
+            <div class="col-12 col-lg-6">
+              <section class="surface shadow-soft ds-section h-100">
+                <div class="d-flex justify-content-between gap-3 align-items-start">
+                  <div>
+                    <h2 class="ds-section__title">Distribucion por tipo y estado</h2>
+                    <p class="ds-section__subtitle">
+                      Participacion de boletas y facturas segun su estado en el
+                      periodo seleccionado
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row align-items-center mt-3 g-4">
+                  <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <svg id="energy-donut" class="ds-chart" width="160" height="160" viewBox="0 0 160 160" role="img"
+                      aria-label="Distribucion de boletas y facturas por estado"></svg>
+                  </div>
+                  <div class="col-12 col-md-6 text-center text-md-start">
+                    <div id="energy-total" class="fs-3 fw-bold">—</div>
+                    <div class="text-muted small">Total documentos registrados</div>
+                    <ul id="energy-legend" class="list-unstyled mt-3 mb-0"></ul>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <section class="surface shadow-soft ds-section h-100">
+                <div class="d-flex justify-content-between gap-3 align-items-start">
+                  <div>
+                    <h2 class="ds-section__title">Evolucion de facturacion</h2>
+                    <p class="ds-section__subtitle">
+                      Monto emitido durante el periodo segun la vista seleccionada
+                    </p>
+                  </div>
+                </div>
+
+                <div class="row mt-3 g-3 align-items-stretch">
+                  <div class="col-12 col-md-5 col-xl-4">
+                    <div class="row g-3">
+                      <div class="col-4 col-md-12">
+                        <div class="surface-2 p-3 h-100">
+                          <div id="avg-kw" class="fw-bold">—</div>
+                          <div class="text-muted small">Promedio</div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-md-12">
+                        <div class="surface-2 p-3 h-100">
+                          <div id="peak-kw" class="fw-bold">—</div>
+                          <div class="text-muted small">Maximo periodo</div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-md-12">
+                        <div class="surface-2 p-3 h-100">
+                          <div id="efficiency" class="fw-bold">—</div>
+                          <div class="text-muted small">Tasa de cobro</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-7 col-xl-8">
+                    <div class="surface-2 p-3 h-100">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="text-muted small">
+                          Meta mensual: <span id="threshold">—</span>
+                        </div>
+                        <div id="chart-mode" class="text-muted small" aria-label="Modo del grafico">
+                          Mensual
+                        </div>
+                      </div>
+                      <svg id="demand-chart" class="ds-chart" width="560" height="170" viewBox="0 0 560 170" role="img"
+                        aria-label="Serie temporal de montos facturados con meta"></svg>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="row g-3 mt-3">
+            <div class="col-12">
+              <section class="surface shadow-soft ds-section">
+                <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                  <div>
+                    <h2 class="ds-section__title">Registro de boletas y facturas</h2>
+                    <p class="ds-section__subtitle">Listado de documentos del cliente segun filtros aplicados</p>
+                  </div>
+                  <div id="documents-count" class="text-muted small">Mostrando 0 registros</div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table align-middle mb-0 ds-docs-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Folio</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col" class="text-end">Monto</th>
+                      </tr>
+                    </thead>
+                    <tbody id="documents-table-body"></tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="mobile-nav" class="ds-mobile-nav d-none" role="dialog" aria-modal="true" aria-label="Navegación">
+      <div class="ds-mobile-nav__panel">
+        <nav class="ds-nav" aria-label="Navegación móvil">
+          <a class="ds-nav__item" href="#" aria-label="Overview" aria-current="page">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M13 2L3 14h7l-1 8 12-14h-7l-1-6Z" stroke="currentColor" stroke-width="1.8"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Devices">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z" stroke="currentColor"
+                stroke-width="1.6" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Analytics">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19V5m0 14h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M7 14l3-3 3 2 5-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"
+                stroke-linecap="round" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Reports">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 3h7l3 3v15a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" stroke="currentColor"
+                stroke-width="1.6" />
+              <path d="M14 3v4h4" stroke="currentColor" stroke-width="1.6" />
+              <path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a class="ds-nav__item" href="#" aria-label="Settings">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="1.8" />
+              <path
+                d="M19.4 15a8 8 0 0 0 .1-1l2-1.2-2-3.4-2.3.6a7.5 7.5 0 0 0-1.7-1l-.3-2.4H9.8L9.5 8a7.5 7.5 0 0 0-1.7 1l-2.3-.6-2 3.4 2 1.2a8 8 0 0 0 .1 1 8 8 0 0 0-.1 1l-2 1.2 2 3.4 2.3-.6a7.5 7.5 0 0 0 1.7 1l.3 2.4h4.4l.3-2.4a7.5 7.5 0 0 0 1.7-1l2.3.6 2-3.4-2-1.2a8 8 0 0 0-.1-1Z"
+                stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </nav>
+
+        <button id="close-nav" type="button" class="btn btn-outline-light w-100 mt-3">
+          Cerrar
+        </button>
+
+        <button id="logout-mobile" type="button" class="btn btn-outline-light w-100 mt-2 d-md-none">
+          Salir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --ds-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  --ds-bg: #f6f8f7;
+  --ds-surface: #ffffff;
+  --ds-surface-2: #f1f5f3;
+  --ds-text: #0f172a;
+  --ds-muted: #475569;
+  --ds-border: rgba(15, 23, 42, 0.08);
+  --ds-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+  --ds-radius: 14px;
+
+  --ds-primary: #16a34a;
+  --ds-primary-600: #15803d;
+  --ds-primary-contrast: #ffffff;
+  --ds-success: #16a34a;
+  --ds-warning: #f59e0b;
+  --ds-danger: #ef4444;
+
+  --ds-sidebar: #2f6b57;
+  --ds-sidebar-2: #2a5f4e;
+  --ds-sidebar-icon: rgba(255, 255, 255, 0.7);
+  --ds-sidebar-icon-active: rgba(255, 255, 255, 0.95);
+
+  --ds-focus: rgba(22, 163, 74, 0.35);
+}
+
+[data-theme='dark'] {
+  --ds-bg: #0b1220;
+  --ds-surface: #0f172a;
+  --ds-surface-2: #111c33;
+  --ds-text: #e2e8f0;
+  --ds-muted: #94a3b8;
+  --ds-border: rgba(226, 232, 240, 0.12);
+  --ds-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+
+  --ds-sidebar: #174a3c;
+  --ds-sidebar-2: #123d31;
+  --ds-sidebar-icon: rgba(255, 255, 255, 0.75);
+  --ds-sidebar-icon-active: rgba(255, 255, 255, 0.98);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ds-font-sans);
+  background: var(--ds-bg);
+  color: var(--ds-text);
+}
+
+a {
+  color: inherit;
+}
+
+.text-muted {
+  color: var(--ds-muted) !important;
+}
+
+.shadow-soft {
+  box-shadow: var(--ds-shadow);
+}
+
+.surface {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius);
+}
+
+.focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--ds-focus);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--ds-primary);
+  --bs-btn-border-color: var(--ds-primary);
+  --bs-btn-hover-bg: var(--ds-primary-600);
+  --bs-btn-hover-border-color: var(--ds-primary-600);
+  --bs-btn-active-bg: var(--ds-primary-600);
+  --bs-btn-active-border-color: var(--ds-primary-600);
+}
+
+.form-select,
+.form-control {
+  border-color: var(--ds-border);
+  background-color: var(--ds-surface);
+  color: var(--ds-text);
+}
+
+[data-theme='dark'] .form-select,
+[data-theme='dark'] .form-control {
+  background-color: var(--ds-surface-2);
+}
+
+[data-theme='dark'] .dropdown-menu,
+[data-theme='dark'] .modal-content {
+  background-color: var(--ds-surface);
+  color: var(--ds-text);
+}
