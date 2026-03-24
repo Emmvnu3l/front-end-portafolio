@@ -41,6 +41,15 @@ Sirve la carpeta `mockups/` con tu herramienta preferida y navega a:
 
 - `/login/login.html`
 
+### Despliegue en Netlify
+
+- El proyecto incluye `netlify.toml` en la raíz.
+- `publish` apunta a `mockups`.
+- La ruta `/` redirige automáticamente a `/login/login.html`.
+- Se mantienen redirecciones de compatibilidad para:
+  - `/login/index.html` -> `/login/login.html`
+  - `/dashboard/index.html` -> `/dashboard/dashboard.html`
+
 ## Flujo de uso
 
 1. Abrir el login en `mockups/login/login.html`.

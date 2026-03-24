@@ -1,0 +1,3 @@
+/ /login/login.html 302
+/login/index.html /login/login.html 301
+/dashboard/index.html /dashboard/dashboard.html 301
