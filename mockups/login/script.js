@@ -78,6 +78,52 @@ function goToDashboard() {
   window.location.href = '../dashboard/dashboard.html'
 }
 
+function parseJwtPayload(token) {
+  try {
+    const payloadPart = String(token ?? '').split('.')[1]
+    if (!payloadPart) return null
+    const normalized = payloadPart.replace(/-/g, '+').replace(/_/g, '/')
+    const padded = normalized + '='.repeat((4 - (normalized.length % 4)) % 4)
+    return JSON.parse(window.atob(padded))
+  } catch {
+    return null
+  }
+}
+
+function signInWithGoogleCredential(credential) {
+  const payload = parseJwtPayload(credential)
+  const email = payload?.email
+
+  if (!email) {
+    setError('No se pudo validar la cuenta de Google')
+    return
+  }
+
+  const user = signIn({ email })
+  window.localStorage.setItem(
+    AUTH_STORAGE_KEY,
+    JSON.stringify({
+      ...user,
+      name: payload?.name || user.name,
+      picture: payload?.picture || null,
+      provider: 'google',
+    }),
+  )
+  goToDashboard()
+}
+
+window.handleCredentialResponse = function handleCredentialResponse(response) {
+  setError(null)
+  const credential = response?.credential
+
+  if (!credential) {
+    setError('No se recibió una credencial válida de Google')
+    return
+  }
+
+  signInWithGoogleCredential(credential)
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setTheme(getInitialTheme())
 
