@@ -1,0 +1,17 @@
+[build]
+  publish = "mockups"
+
+[[redirects]]
+  from = "/"
+  to = "/login/login.html"
+  status = 302
+
+[[redirects]]
+  from = "/login/index.html"
+  to = "/login/login.html"
+  status = 301
+
+[[redirects]]
+  from = "/dashboard/index.html"
+  to = "/dashboard/dashboard.html"
+  status = 301
