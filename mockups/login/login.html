@@ -56,25 +56,6 @@
 
   <script src="./script.js"></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script>
-    function handleCredentialResponse(response) {
-      const jwt = response.credential;
-
-      console.log("JWT:", jwt);
-
-      // Decodificar el token
-      const payload = JSON.parse(atob(jwt.split('.')[1]));
-
-      console.log("Usuario:", payload);
-
-      // Ejemplo:
-      document.body.innerHTML = `
-      <h2>Bienvenido ${payload.name}</h2>
-      <img src="${payload.picture}" width="100"/>
-      <p>${payload.email}</p>
-    `;
-    }
-  </script>
 </body>
 
 </html>
