@@ -76,4 +76,7 @@ Para “resetear” la app, elimina esos valores desde DevTools → Application/
 ![alt text](image.png)
 ![alt text](image-1.png)
 ### login
+#### 03/31/2026
+![alt text](<imgs registro/login/03312026.png>)
+----
 ![alt text](image-2.png)
